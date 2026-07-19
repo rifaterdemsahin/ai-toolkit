@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧰 AI Toolkit — Tools Inventory</title>
+<style>
+  :root {
+    --bg: #0f1220;
+    --bg2: #171b2e;
+    --card: #1c2138;
+    --text: #f2f4fb;
+    --muted: #a9b0c6;
+    --border: #2c3252;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7fb;
+      --bg2: #ffffff;
+      --card: #ffffff;
+      --text: #1a1d29;
+      --muted: #5c6178;
+      --border: #e3e6f0;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    color: var(--text);
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 2.5rem; }
+  header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin: 0 0 0.5rem;
+    background: linear-gradient(90deg, #ff7a59, #ffd166, #06d6a0, #4cc9f0, #b56bff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  header p { color: var(--muted); margin: 0; font-size: 1.05rem; }
+
+  h2.section {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.25rem 1.35rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: var(--accent, #4cc9f0);
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  .card a.card-link {
+    position: absolute; inset: 0; z-index: 1;
+  }
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .emoji { font-size: 1.6rem; line-height: 1; }
+  .card h3 { margin: 0; font-size: 1.05rem; }
+  .card .role {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+    margin: 0;
+  }
+  .badge {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent, #4cc9f0) 18%, transparent);
+    color: var(--accent, #4cc9f0);
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 3.5rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🧰 AI Toolkit — Tools Inventory</h1>
+    <p>A living map of the LLMs, generative media, GPU compute and infra 🔌 that power this workflow.</p>
+  </header>
+
+  <h2 class="section">🧠 Chat / Reasoning LLMs</h2>
+  <div class="grid">
+
+    <div class="card" style="--accent:#4b6bfb;">
+      <a class="card-link" href="https://chat.deepseek.com/" target="_blank" rel="noopener"></a>
+      <div class="card-top"><span class="emoji">💬</span><h3>DeepSeek Chat</h3></div>
+      <p class="role">Free-tier chat & reasoning model — quick Q&A, coding help, and V4 Flash via OpenRouter / local LM Studio.</p>
+      <span class="badge">Chat LLM</span>
+    </div>
+
+    <div class="card" style="--accent:#d97757;">
+      <a class="card-link" href="https://claude.ai/" target="_blank" rel="noopener"></a>
+      <div class="card-top"><span class="emoji">🤖</span><h3>Claude</h3></div>
+      <p class="role">Primary daily-driver coding agent (Claude Code) — vault maintenance, reports, skills, and this very page.</p>
+      <span class="badge">Coding Agent</span>
+    </div>
+
+    <div class="card" style="--accent:#8ab4f8;">
+      <a class="card-link" href="https://gemini.google.com/" target="_blank" rel="noopener"></a>
+      <div class="card-top"><span class="emoji">✨</span><h3>Gemini</h3></div>
+      <p class="role">Heavy use for OCR, document elaboration, image generation, and automated reports.</p>
+      <span class="badge">Multimodal LLM</span>
+    </div>
+
+    <div class="card" style="--accent:#10a37f;">
+      <a class="card-link" href="https://chatgpt.com/" target="_blank" rel="noopener"></a>
+      <div class="card-top"><span class="emoji">🟢</span><h3>ChatGPT</h3></div>
+      <p class="role">General-purpose assistant and reasoning cross-check; Whisper (OpenAI) powers video transcription skills.</p>
+      <span class="badge">Chat LLM</span>
+    </div>
+
+  </div>
+
+  <h2 class="section">🎨 Generative Media</h2>
+  <div class="grid">
+
+    <div class="card" style="--accent:#00c4cc;">
+      <a class="card-link" href="https://www.canva.com/" target="_blank" rel="noopener"></a>
+      <div class="card-top"><span class="emoji">🖌️</span><h3>Canva</h3></div>
+      <p class="role">Design generation & editing via MCP — social graphics, brand templates, quick visuals.</p>
+      <span class="badge">Design</span>
+    </div>
+
+    <div class="card" style="--accent:#7c3aed;">
+      <a class="card-link" href="https://fal.ai/" target="_blank" rel="noopener"></a>
+      <div class="card-top"><span class="emoji">🖼️</span><h3>fal.ai</h3></div>
+      <p class="role">Image-generation API — infographics, mindmaps, and illustrative assets on demand.</p>
+      <span class="badge">Image Gen</span>
+    </div>
+
+  </div>
+
+  <h2 class="section">⚡ Compute & Inference</h2>
+  <div class="grid">
+
+    <div class="card" style="--accent:#f97316;">
+      <a class="card-link" href="https://www.runpod.io/" target="_blank" rel="noopener"></a>
+      <div class="card-top"><span class="emoji">🚀</span><h3>RunPod</h3></div>
+      <p class="role">On-demand GPU compute — likely backing image/video generation and local-model workloads.</p>
+      <span class="badge">GPU Compute</span>
+    </div>
+
+    <div class="card" style="--accent:#22c55e;">
+      <a class="card-link" href="https://docs.deepinfra.com/" target="_blank" rel="noopener"></a>
+      <div class="card-top"><span class="emoji">🧩</span><h3>DeepInfra</h3></div>
+      <p class="role">Hosted inference API for open models — LLMs, embeddings, and serverless model endpoints.</p>
+      <span class="badge">Inference API</span>
+    </div>
+
+  </div>
+
+  <h2 class="section">🏗️ Infrastructure</h2>
+  <div class="grid">
+
+    <div class="card" style="--accent:#0078d4;">
+      <a class="card-link" href="https://azure.microsoft.com/" target="_blank" rel="noopener"></a>
+      <div class="card-top"><span class="emoji">☁️</span><h3>Azure</h3></div>
+      <p class="role">Key Vault holds provider secrets (xAI, SiliconFlow, etc.) — the secure backbone for API key management.</p>
+      <span class="badge">Cloud / Secrets</span>
+    </div>
+
+    <div class="card" style="--accent:#a855f7;">
+      <a class="card-link" href="https://fly.io/" target="_blank" rel="noopener"></a>
+      <div class="card-top"><span class="emoji">🪰</span><h3>Fly.io</h3></div>
+      <p class="role">Hosts Qdrant for RAG / semantic search across the vault (secondbrain collections).</p>
+      <span class="badge">Hosting</span>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>🗂️ See <a href="https://github.com/rifaterdemsahin/ai-toolkit#readme">README.md</a> for the full self-learning project structure. Compiled 2026-07-20.</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,5 +1,7 @@
 # Self Learning Project Template
 
+🌐 **Published Page:** [rifaterdemsahin.github.io/ai-toolkit](https://rifaterdemsahin.github.io/ai-toolkit/) — 🧰 AI Tools Inventory (LLMs, generative media, GPU compute & infra)
+
 ## Goal : Fill the skills gaps by self learning while leveraging technology
 
 ## Documentation for the Folder Structure
