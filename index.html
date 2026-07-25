@@ -94,6 +94,20 @@
     line-height: 1.45;
     margin: 0;
   }
+  .card .btn-open {
+    position: relative; z-index: 2;
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    margin-top: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    background: var(--accent, #4cc9f0);
+    color: #fff;
+    transition: opacity 0.15s ease;
+  }
+  .card .btn-open:hover { opacity: 0.85; }
   .badge {
     display: inline-block;
     margin-top: 0.6rem;
@@ -152,6 +166,14 @@
       <div class="card-top"><span class="emoji">🟢</span><h3>ChatGPT</h3></div>
       <p class="role">General-purpose assistant and reasoning cross-check; Whisper (OpenAI) powers video transcription skills.</p>
       <span class="badge">Chat LLM</span>
+    </div>
+
+    <div class="card" style="--accent:#ff6a00;">
+      <a class="card-link" href="https://modelstudio.console.alibabacloud.com/ap-southeast-1?tab=dashboard#/efm/model_experience_center/text" target="_blank" rel="noopener"></a>
+      <div class="card-top"><span class="emoji">🧪</span><h3>Alibaba Model Studio</h3></div>
+      <p class="role">Experiment with Qwen and other Alibaba-hosted LLMs in a playground — text generation, comparisons, and prompt testing.</p>
+      <span class="badge">Chat LLM</span>
+      <a class="btn-open" href="https://modelstudio.console.alibabacloud.com/ap-southeast-1?tab=dashboard#/efm/model_experience_center/text" target="_blank" rel="noopener">🚀 Open →</a>
     </div>
 
   </div>
